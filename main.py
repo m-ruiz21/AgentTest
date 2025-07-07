@@ -13,7 +13,7 @@ async def main():
         tools = tools if tools else None
 
     graph = AgentGraph(
-        system_prompt="You are a helpful agent that can use tools to assist the user.",
+        system_prompt="You are a helpful agent that can use tools to assist the user. Before doing tasks, make sure you're getting as much information as possible from the user. If the tool fails or you need more information, make sure to come back and ask for feedback.",
         tools=tools 
     )
 
@@ -27,7 +27,7 @@ async def main():
     while user_input.lower() != "exit":
         try:
             messages.append(HumanMessage(content=user_input))
-            new_state = await graph.agent.ainvoke({"messages": messages})
+            new_state = await graph.agent.ainvoke({"messages": messages}, print_mode="checkpoints")
             messages = new_state["messages"]
             curr_message_idx = len(messages) - 1
             for m in new_state["messages"][curr_message_idx:]:

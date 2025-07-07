@@ -9,10 +9,6 @@ available_models = [
     "o3-mini"
 ]
 
-CONFIG = load_config_obj("config.json")
-CHAT_CLIENT_CONFIG = CONFIG.get("chatClient", {})
-CHAT_COMPLETIONS_CONFIG = CONFIG.get("chatCompletions", {})
-
 def validate_chat_client_env(env: dict) -> None:
     """
     Validates the chat client environment variables.
