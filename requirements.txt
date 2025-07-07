@@ -1,0 +1,11 @@
+python-dotenv
+azure-ai-inference
+a2a-sdk
+fastmcp
+langgraph
+langchain-core
+langchain-community
+langchain-mcp-adapters
+langchain
+langchain-openai
+IPython

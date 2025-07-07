@@ -1,0 +1,11 @@
+{
+    "chatCompletions": {
+        "max_tokens": 2048,
+        "temperature": 0.8,
+        "top_p": 0.1,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "model": "Llama-4-Scout-17B-16E-Instruct",
+        "stream": true
+    }
+}
