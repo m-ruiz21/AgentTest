@@ -27,7 +27,7 @@ async def main():
     while user_input.lower() != "exit":
         try:
             messages.append(HumanMessage(content=user_input))
-            new_state = await graph.agent.ainvoke({"messages": messages}, print_mode="checkpoints")
+            new_state = await graph.agent.ainvoke({"messages": messages})
             messages = new_state["messages"]
             curr_message_idx = len(messages) - 1
             for m in new_state["messages"][curr_message_idx:]:
